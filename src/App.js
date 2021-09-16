@@ -4,11 +4,9 @@ import Tasks from './components/Tasks/Tasks';
 import NewTask from './components/NewTask/NewTask';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [tasks, setTasks] = useState([]);
 
-  const fetchTasks = useHttp("fetch",'');
+  const fetchTasks = useHttp({url:'https://myreactapp-14003-default-rtdb.asia-southeast1.firebasedatabase.app/tasks.json'});
   
 
   useEffect(() => {
